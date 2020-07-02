@@ -16,7 +16,8 @@ RUN apt-get install -y \
     libpng-dev \
     libzip-dev \
     zip
-RUN pecl install xdebug-beta
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
 RUN docker-php-ext-configure gd \
       --with-jpeg \
       --with-freetype
